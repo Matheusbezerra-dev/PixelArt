@@ -1,7 +1,14 @@
+let defaultColor = document.getElementsByClassName('color')[0];
+defaultColor.classList.add('selected');
 
-function createh1(){
-  let h1 = document.createElement('h1');
-  document.body.appendChild(h1)
-  h1.setAttribute('id', 'title');
-  h1.innerText = 'Paleta de Cores'
-}createh1()
+let firstColor = 'black'
+document.querySelectorAll('#color-palette .color').forEach(item => {
+  item.addEventListener('click', colorClickEvent);
+});
+
+function colorClickEvent(e) {
+  let color = e.target.getAttribute('data-color');
+    firstColor = color;
+  document.querySelector('.color.selected').classList.remove('selected');
+  e.target.classList.add('selected');
+};
