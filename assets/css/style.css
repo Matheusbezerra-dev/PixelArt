@@ -48,6 +48,21 @@ header {
   background-color: blue;
 }
 
+.clear{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+    
+}
+
+.clear div{
+  display: flex;
+  width: 180px;
+  justify-content: space-between;
+  
+
+}
+
 .container {
   display: flex;
   justify-content: center;

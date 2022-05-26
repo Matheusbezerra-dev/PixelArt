@@ -1,11 +1,14 @@
 // initial Data
 const pixel = document.getElementsByClassName('pixel');
+const clear = document.getElementById('clear-board')
 const firstColor = 'black';
 
 // Events
 document.querySelectorAll('#color-palette .color').forEach(item => {
   item.addEventListener('click', colorClickEvent);
 });
+
+clear.addEventListener('click', clearBoard);
 
 // functions
 window.onload = function initialSelected(){
@@ -15,7 +18,6 @@ window.onload = function initialSelected(){
 
 function colorClickEvent(e) {
   const color = e.target.getAttribute('data-color');
-  // firstColor = color;
   document.querySelector('.color.selected').classList.remove('selected');
   e.target.classList.add('selected');
 };
@@ -29,3 +31,12 @@ function colorPixel(){
     });
   };  
 };colorPixel()
+
+function clearBoard() {
+  for (let i = 0; i < pixel.length; i += 1) {
+    pixel[i].style.backgroundColor = 'white';
+  }
+}
+
+
+ 
