@@ -48,18 +48,20 @@ header {
   background-color: blue;
 }
 
-.clear{
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-    
+.section-button{
+  margin: auto;
+  width: 250px;
+  
 }
 
-.clear div{
+.clear{
   display: flex;
-  width: 180px;
-  justify-content: space-between;
-  
+  justify-content:space-between;
+  margin-top: 20px;
+}
+
+.clear-div{
+  display: flex;
 
 }
 
