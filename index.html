@@ -13,7 +13,7 @@
     <h1 id="title">Paleta de Cores</h1>
   </header>
   <main>
-    <section>
+    <section class="section-palette">
       <div id="color-palette">
         <div data-color="black" class="color" id="black"></div>
         <div data-color="red" class="color" id="red"></div>
@@ -21,10 +21,10 @@
         <div data-color="blue" class="color" id="blue"></div>
       </div>
     </section>
-    <section class="section-button">
+    <section class="section-board">
       <div class="clear">
         <div class="selection">
-          <input id="boar-size" type="number" min="1" max="50">
+          <input id="board-size" type="number" min="1" max="50"/>
           <button id="generate-board">VQV</button>
         </div>
         <div class="clear-div">
@@ -32,7 +32,7 @@
         </div>
       </div>
     </section>
-    <section class="container">
+    <section class="section-pixel">
       <div id="pixel-board">
         <div class="pixel"></div>
         <div class="pixel"></div>
@@ -63,6 +63,11 @@
       </div>
     </section>
   </main>
+  <footer class="copyrights">
+    <div class="footer_copy">
+      <p>Criado com Amor ❤️ por <a href="https://www.linkedin.com/in/matheusbezerra-dev/" target="">Matheus Bezerra</a>.</p>      
+  </div>
+  </footer>  
   <script src="./assets/js/script.js"></script>
 </body>
 

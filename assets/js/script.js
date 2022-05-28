@@ -1,12 +1,16 @@
 // initial Data
 const pixel = document.getElementsByClassName('pixel');
 const clear = document.getElementById('clear-board')
+const input = document.getElementById('board-size')
+const vqv = document.getElementById('generate-board')
 const firstColor = 'black';
 
 // Events
 document.querySelectorAll('#color-palette .color').forEach(item => {
   item.addEventListener('click', colorClickEvent);
 });
+
+vqv.addEventListener('click', generateInput)
 
 clear.addEventListener('click', clearBoard);
 
@@ -38,5 +42,13 @@ function clearBoard() {
   }
 }
 
-
+function generateInput(e){
+  input.textContent = e.target.value;
+    for (let i = 5; i < input; i += 1) {
+      console.log(input[i])
+      
+      
+    }   
+    
+}
  
