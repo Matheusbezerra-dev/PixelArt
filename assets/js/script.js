@@ -1,24 +1,57 @@
 // initial Data
+const pixelBoard = document.getElementById('pixel-board');
 const pixel = document.getElementsByClassName('pixel');
-const clear = document.getElementById('clear-board')
-const input = document.getElementById('board-size')
-const vqv = document.getElementById('generate-board')
+const clear = document.getElementById('clear-board');
+const input = document.getElementById('board-size');
+const vqv = document.getElementById('generate-board');
 const firstColor = 'black';
+let valueInput = 5;
 
 // Events
 document.querySelectorAll('#color-palette .color').forEach(item => {
   item.addEventListener('click', colorClickEvent);
 });
 
-vqv.addEventListener('click', generateInput)
+vqv.addEventListener('click', conditions);
 
 clear.addEventListener('click', clearBoard);
 
 // functions
+
 window.onload = function initialSelected(){
   const defaultColor = document.getElementsByClassName('color')[0];
   defaultColor.classList.add('selected');
 };
+
+generateBox(valueInput);
+function conditions() {  
+  pixelBoard.innerHTML = '';
+  inputValue = input.value;
+  if (inputValue === '') {
+    alert('Board inválido!');
+  } else if (inputValue < 5 && inputValue > 0) {
+    inputValue = 5;
+  } else if (inputValue > 50) {
+    inputValue = 50;
+  }
+  generateBox(inputValue);
+}
+
+function generateBox(a) {
+  const insideDiv = pixelBoard;
+  for (let i = 0; i < a; i += 1) {
+    const row = document.createElement('div');
+    row.className = 'line';
+
+    for (let j = 0; j < a; j += 1) {
+      const pixel = document.createElement('div');
+      pixel.className = 'pixel';
+      row.appendChild(pixel);
+    }
+    insideDiv.appendChild(row);
+  }
+  colorPixel() 
+}
 
 function colorClickEvent(e) {
   const color = e.target.getAttribute('data-color');
@@ -34,21 +67,10 @@ function colorPixel(){
         .getPropertyValue('background-color');
     });
   };  
-};colorPixel()
+};
 
 function clearBoard() {
   for (let i = 0; i < pixel.length; i += 1) {
     pixel[i].style.backgroundColor = 'white';
   }
 }
-
-function generateInput(e){
-  input.textContent = e.target.value;
-    for (let i = 5; i < input; i += 1) {
-      console.log(input[i])
-      
-      
-    }   
-    
-}
- 

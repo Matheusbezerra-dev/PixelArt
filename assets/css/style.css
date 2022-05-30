@@ -48,19 +48,19 @@ header {
   background-color: blue;
 }
 
-.section-board{
+.section-board {
   margin: auto;
   width: 250px;
-  
+
 }
 
-.clear{
+.clear {
   display: flex;
-  justify-content:space-between;
+  justify-content: space-between;
   margin-top: 20px;
 }
 
-.clear-div{
+.clear-div {
   display: flex;
 
 }
@@ -73,8 +73,6 @@ header {
 #pixel-board {
   margin-top: 20px;
   flex-direction: row;
-  width: 220px;
-  height: 220px;
 }
 
 .pixel {
@@ -85,7 +83,7 @@ header {
   background-color: white;
 }
 
-footer{
+footer {
   display: flex;
   background-color: #999;
   color: white;
@@ -94,7 +92,7 @@ footer{
   height: auto;
 }
 
-.footer_copy{
+.footer_copy {
   border-top: 1px solid #2c2c2c;
   line-height: 40px;
   color: white;
@@ -102,17 +100,17 @@ footer{
   margin-top: 30px;
 }
 
-.footer_copy p{
+.footer_copy p {
   align-items: center;
   justify-content: center;
   text-align: center;
 }
 
-.footer_copy a{
+.footer_copy a {
   color: white;
   text-decoration: none;
 }
 
-.footer_copy a:hover{
+.footer_copy a:hover {
   text-decoration: underline;
 }
