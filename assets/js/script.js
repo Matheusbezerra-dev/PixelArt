@@ -5,7 +5,6 @@ const clear = document.getElementById('clear-board');
 const input = document.getElementById('board-size');
 const loadColor = document.getElementById('changeButton');
 const vqv = document.getElementById('generate-board');
-const firstColor = 'black';
 let valueInput = 5;
 
 // Events
@@ -20,11 +19,12 @@ loadColor.addEventListener('click', changeColor)
 
 clear.addEventListener('click', clearBoard);
 
-// functions
 
+// functions
 window.onload = function initialSelected() {
   const defaultColor = document.getElementsByClassName('color')[0];
   defaultColor.classList.add('selected');
+  defaultColor.style.backgroundColor = 'black'
   const r = document.getElementsByClassName('color')[1].style.backgroundColor = colorAleatory();
   const g = document.getElementsByClassName('color')[2].style.backgroundColor = colorAleatory();
   const b = document.getElementsByClassName('color')[3].style.backgroundColor = colorAleatory();
@@ -61,7 +61,6 @@ function generateBox(a) {
 }
 
 function colorClickEvent(e) {
-  const color = e.target.getAttribute('data-color');
   document.querySelector('.color.selected').classList.remove('selected');
   e.target.classList.add('selected');
 };
