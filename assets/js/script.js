@@ -1,3 +1,9 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-multi-assign */
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-shadow */
+/* eslint-disable no-use-before-define */
+
 // initial Data
 const pixelBoard = document.getElementById('pixel-board');
 const pixel = document.getElementsByClassName('pixel');
@@ -5,26 +11,25 @@ const clear = document.getElementById('clear-board');
 const input = document.getElementById('board-size');
 const loadColor = document.getElementById('changeButton');
 const vqv = document.getElementById('generate-board');
-let valueInput = 5;
+const valueInput = 5;
 
 // Events
-document.querySelectorAll('#color-palette .color').forEach(item => {
+document.querySelectorAll('#color-palette .color').forEach((item) => {
   item.addEventListener('click', colorClickEvent);
-  
 });
 
 vqv.addEventListener('click', conditions);
 
-loadColor.addEventListener('click', changeColor)
+loadColor.addEventListener('click', changeColor);
 
 clear.addEventListener('click', clearBoard);
 
-
 // functions
+
 window.onload = function initialSelected() {
   const defaultColor = document.getElementsByClassName('color')[0];
   defaultColor.classList.add('selected');
-  defaultColor.style.backgroundColor = 'black'
+  defaultColor.style.backgroundColor = 'black';
   const r = document.getElementsByClassName('color')[1].style.backgroundColor = colorAleatory();
   const g = document.getElementsByClassName('color')[2].style.backgroundColor = colorAleatory();
   const b = document.getElementsByClassName('color')[3].style.backgroundColor = colorAleatory();
@@ -57,13 +62,13 @@ function generateBox(a) {
     }
     insideDiv.appendChild(row);
   }
-  colorPixel()
+  colorPixel();
 }
 
 function colorClickEvent(e) {
   document.querySelector('.color.selected').classList.remove('selected');
   e.target.classList.add('selected');
-};
+}
 
 function colorPixel() {
   for (let i = 0; i < pixel.length; i += 1) {
@@ -72,8 +77,8 @@ function colorPixel() {
         .getComputedStyle(document.getElementsByClassName('selected')[0])
         .getPropertyValue('background-color');
     });
-  };
-};
+  }
+}
 
 function clearBoard() {
   for (let i = 0; i < pixel.length; i += 1) {
@@ -82,14 +87,14 @@ function clearBoard() {
 }
 
 function colorAleatory() {
-  let r = Math.floor(Math.random() * 255),
-    g = Math.floor(Math.random() * 255),
-    b = Math.floor(Math.random() * 255);
-    return 'rgb('+r+','+g+','+b+')'
+  const r = Math.floor(Math.random() * 255);
+  const g = Math.floor(Math.random() * 255);
+  const b = Math.floor(Math.random() * 255);
+  return `rgb(${r},${g},${b})`;
 }
 
-function changeColor(){
-  const r = document.getElementsByClassName('color')[1].style.backgroundColor = colorAleatory()
-  const g = document.getElementsByClassName('color')[2].style.backgroundColor = colorAleatory()
-  const b = document.getElementsByClassName('color')[3].style.backgroundColor = colorAleatory()
+function changeColor() {
+  const r = document.getElementsByClassName('color')[1].style.backgroundColor = colorAleatory();
+  const g = document.getElementsByClassName('color')[2].style.backgroundColor = colorAleatory();
+  const b = document.getElementsByClassName('color')[3].style.backgroundColor = colorAleatory();
 }
